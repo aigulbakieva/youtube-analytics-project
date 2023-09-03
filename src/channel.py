@@ -25,32 +25,53 @@ class Channel:
 
 
     def __add__(self, other):
-        pass
+        """
+        Метод вовзращает сумму подсписчиков двух каналов.
+        """
+        return int(self.subscriber_count) + int(other.subscriber_count)
 
 
     def __sub__(self, other):
-        pass
-
+        """
+        Метод возврщает разницу кол-ва подписчиков двух каналов.
+        """
+        return int(self.subscriber_count) - int(other.subscriber_count)
 
 
     def __gt__(self, other):
-        pass
+        """
+        Метод возврщает True, если кол-ва подписчиков первого канала больше чем второго.
+        """
+        return self.subscriber_count > other.subscriber_count
 
 
     def __ge__(self, other):
-        pass
+        """
+        Метод возвращает True, если у первого канала больше или равно подписчиков..
+        """
+        return self.subscriber_count >= other.subscriber_count
 
 
     def __lt__(self, other):
-        pass
+        """
+        Метод возвращает True, если у первого канала меньше подписчиков.
+        """
+        return self.subscriber_count < other.subscriber_count
 
 
     def __le__(self, other):
-        pass
+        """
+        Мeтод возвращает True, если у первого канала меньше или равно подписчиков.
+        """
+        return self.subscriber_count <= other.subscriber_count
 
 
     def __eq__(self, other):
-        pass
+        """
+        Метод возвращает True, если количество подписчиков одинаковое.
+        """
+        return self.subscriber_count == other.subscriber_count
+
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
