@@ -8,6 +8,8 @@ packages = [{include = "youtube_analytics_project"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+isodate = "^0.6.1"
+rdflib = "^7.0.0"
 
 
 [build-system]
