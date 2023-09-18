@@ -6,14 +6,20 @@ class Video:
     def __init__(self, video_id: str):
         self.video_id: str = video_id
         self.video_info: dict = self.get_video_info(video_id)
-        self.video_title: str = self.video_info['items'][0]['snippet']['title']
-        self.video_url = "https://www.youtube.com/watch?v=" + f"{video_id}"
-        self.view_count: int = int(self.video_info['items'][0]['statistics']['viewCount'])
-        self.like_count: int = int(self.video_info['items'][0]['statistics']['likeCount'])
+        try:
+            self.title: str = self.video_info['items'][0]['snippet']['title']
+            self.video_url = "https://www.youtube.com/watch?v=" + f"{video_id}"
+            self.view_count: int = int(self.video_info['items'][0]['statistics']['viewCount'])
+            self.like_count: int = int(self.video_info['items'][0]['statistics']['likeCount'])
+        except IndexError:
+            self.title = None
+            self.video_url = None
+            self.view_count = None
+            self.like_count = None
 
 
     def __str__(self):
-        return self.video_title
+        return self.title
 
 
     @classmethod
